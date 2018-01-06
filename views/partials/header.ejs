@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Notifier </title>
+  <link rel="stylesheet" type="text/css" href="style/style.css">
+  <!-- Responsive Meta Tag -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style/style.css">
+  <!-- main stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- responsive stylesheet -->
+  <link rel="stylesheet" href="css/responsive.css">
+
+      <link href="Style\dist\css\bootstrap.min.css" rel="stylesheet">
+
+<link href="Style\dist\css\bootstrap.css" rel="stylesheet">
+
+<link href="css\simple-sidebar.css" rel="stylesheet">
+
+<link href="Style\dist\css\bootstrap.theme.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="Style\dist\font.css"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<style type="text/css">
+  .logo
+  {
+    margin-top: -40px;
+  }
+  .im
+  {
+    z-index: -1;
+  }
+</style>
+</head>
+<body ng-app="myApp" ng-controller="homeController">
+  
+  <!-- .preloader -->
+  <div class="preloader"></div>
+  <!-- /.preloader -->
+  
+  
+  <!-- #header -->
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <!-- .logo -->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 logo">
+          <a href="index.html"><img src="/img/logo.png" alt="Logo Image"></a>
+        </div>
+        <!-- /.logo -->
+
+        <!-- .mainmenu-container -->
+        <nav class="col-lg-9 col-md-9 col-sm-6 col-xs-6 mainmenu-container">
+          <button class="nav-toggler">Navigation <i class="fa fa-bars"></i></button>    
+          <ul class="mainmenu clearfix">
+            <li class="nav-closer"><i class="fa fa-close"></i></li>
+            <li class="current scrollToLink dropdown">
+              <a href="#banner">HOME</a>
+            </li>
+            <li class="">
+              <a href="/events/new">Create Event</a>
+            </li>
+            <li class="scrollToLink"><a href="/events">EVENT</a></li>     
+            <li class="scrollToLink"><a href="#event-speakers">SPEAKER</a></li>
+            <li class="scrollToLink"><a href="#gallery">GALLERY</a></li>
+            <li class="scrollToLink dropdown">
+              <a href="#blog">BLOG</a>
+            </li>
+            <li class="scrollToLink"><a href="#contact">CONTACT</a></li>
+      <li>
+        <% if(!currentUser){ %>
+          <li><a href="/login">Login</a></li>
+         <!--  <li><a href="/register">Signup</a></li> -->
+        <% }else{ %>
+          
+          <li><a href="#">Signed in as: <%= currentUser.username %></a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% } %>
+      </li>
+            
+          </ul>
+        </nav>
+        <!-- /.mainmenu-container -->
+      </div>
+    </div>
+  </header>
+  <!-- /#header -->
+
+  <!-- #banner -->
+  <section id="banner">
+    <div class="banner-container">
+      <div class="banner">
+        <ul>
+          <li>
+            <img 
+              src="/img/banner-bg.jpg" 
+              data-bgposition="center center" 
+              data-kenburns="on" 
+              data-duration="20000" 
+              data-ease="Linear.easeNone" 
+              data-bgfit="100" 
+              data-bgfitend="130" 
+              data-bgpositionend="center center"
+              alt="slider image" />
+                        
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </section> <!-- /#banner -->
+
+  <!-- #information-bar -->
+  <section id="information-bar">
+    <div class="container">
+      <div class="row">
+        
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+          <ul>
+            <li><span class="img-holder"><img src="/img/1.png" alt=""></span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+          <ul>
+            <li><span class="img-holder"><img src="/img/2.png" alt=""></span></li>
+            <li><span><b>Sponsor</b> Some Lorem Ipsum Text</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+          <ul>
+            <li><span class="img-holder"><img src="/img/3.png" alt=""></span></li>
+            <li><span><b>25+ Speakers</b> Some Lorem Ipsum Text</span></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+          <ul>
+            <li><span class="img-holder"><img src="/img/4.png" alt=""></span></li>
+            <li><span><b>Some Coffe</b> Some Lorem Ipsum Text</span></li>
+          </ul>
+        </div>
+      
+      </div>
+    </div>
+  </section>
+  <!-- /#information-bar -->
+
+  
+  <!-- #upcoming-event -->
+  <section id="upcoming-event">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-7">
+          <div class="section-title">
+            <h1>Upcoming Events</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has <br> been the industry's standard dummy text ever since the 1500</p>
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5">
+          <form action="#" class="pull-right">
+            <input type="text" placeholder="Search Event"> <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="tab-title-wrap">
+            <ul class="clearfix">
+              <li class="filter active" data-filter="all"><span>All Event</span></li>
+              <li class="filter" data-filter=".april-14"><span>April 14</span></li>
+              <li class="filter" data-filter=".april-22"><span>April 22</span></li>
+              <li class="filter" data-filter=".april-28"><span>April 28</span></li>
+              <li class="filter" data-filter=".may-10"><span>May 10</span></li>
+              <li class="filter" data-filter=".may-15"><span>May 15</span></li>
+              <li class="filter" data-filter=".may-22"><span>May 22</span></li>
+              <li class="filter" data-filter=".may-23"><span>May 23</span></li>
+              <li class="filter" data-filter=".jun-01"><span>June 01</span></li>
+            </ul>
+          </div>
+          <div class="tab-content-wrap row">
+            <div class="col-lg-3 col-md-4 col-sm-6 mix april-14 april-22 hvr-float-shadow wow fadeIn">
+              <div class="img-holder"><img src="/img/1.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>22 April, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix april-28 april-14 hvr-float-shadow wow fadeIn" data-wow-delay=".3s">
+              <div class="img-holder"><img src="/img/2.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>28 April, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix may-10 may-22 hvr-float-shadow wow fadeIn" data-wow-delay=".6s">
+              <div class="img-holder"><img src="/img/3.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>10 May, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix may-15 may-23 hvr-float-shadow wow fadeIn" data-wow-delay=".9s">
+              <div class="img-holder"><img src="/img/1.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>15 May, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix may-22 hvr-float-shadow">
+              <div class="img-holder"><img src="/img/1.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>15 May, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix may-23 hvr-float-shadow ">
+              <div class="img-holder"><img src="/img/1.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>15 May, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix jun-01 hvr-float-shadow">
+              <div class="img-holder"><img src="/img/1.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>01 June, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 mix april-22 hvr-float-shadow ">
+              <div class="img-holder"><img src="/img/1.jpg" alt=""></div>
+              <div class="content-wrap">
+                <img src="/img/author.png" alt="" class="author-img">
+                <div class="meta">
+                  <ul>
+                    <li><span><i class="fa fa-clock-o"></i>15 June, 2015</span></li>
+                    <li><span><i class="fa fa-map-marker"></i>California</span></li>
+                  </ul>
+                </div>
+                <h3>Event Name</h3>
+                <p>Lorem Ipsum is simply dummy text of the printing [...]</p>
+                <a class="read-more" href="#">read more<i class="fa fa-angle-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#upcoming-event -->
+
+  <!-- #register-now -->
+  <section id="register-now" class="gradient-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h1>REGISTER NOW AND JOIN WITH US!!</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="clearfix">
+            <form class="CreateUser">
+            <li>
+              <div class="input-wrap">
+                <label><img src="/img/name.png" alt="">Name</label>
+                <input type="text" class="name" placeholder="Full Name">
+              </div>
+            </li>
+            <li>
+              <div class="input-wrap">
+                <label><img src="/img/email.png" alt="">EMAIL</label>
+                <input type="text" class="email" placeholder="Enter your email">
+              </div>
+            </li>
+            <li>
+              <div class="input-wrap">
+                <label><img src="/img/phone.png" alt="">PHONE</label>
+                <input type="text" class="phone" placeholder="Enter Phone Number">
+              </div>
+            </li>
+            <li>
+              <div class="input-wrap">
+                <label><img src="/img/password.png" alt="">PASSWORD</label>
+                <input type="text" class="password" placeholder="PASSWORD">
+              </div>
+            </li>
+            <li>
+              <div class="input-wrap">
+                <button type="submit" class="hvr-bounce-to-right">RESGISTER</button>
+              </div>
+            </li>
+          </form>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#register-now -->
+
+
+  <!-- #event-speakers -->
+  <section id="event-speakers">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h1>EVENT SPEAKERS</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has <br> been the industry's standard dummy text ever since the 1500</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-8 col-lg-offset-0 col-md-offset-1 col-sm-offset-1">
+          <!-- .single-speakers -->
+          <div class="single-speakers row">
+            <div class="info text-right col-lg-6 col-md-7 col-sm-7">
+              <h3>Masum Rana</h3>
+              <span class="position">UI/UX Designer</span>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="img-holder text-center col-lg-6 col-md-5 col-sm-5">
+              <div class="img-container"><img src="/img/1.png" alt=""></div>
+            </div>
+          </div>
+          <!-- /.single-speakers -->
+
+          <!-- .single-speakers -->
+          <div class="single-speakers row">
+            <div class="info text-right col-lg-6 col-md-7 col-sm-7">
+              <h3>Muhibbur Rashid</h3>
+              <span class="position">UI/UX Designer</span>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+            <div class="img-holder text-center col-lg-6 col-md-5 col-sm-5">
+              <div class="img-container"><img src="/img/2.png" alt=""></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-10 col-lg-offset-0 col-md-offset-1 col-sm-offset-1">
+          <!-- .single-speakers -->
+          <div class="single-speakers row">
+            <div class="img-holder text-center col-lg-6 col-md-5 col-sm-5">
+              <div class="img-container" data-wow-delay=".6s"><img src="/img/3.png" alt=""></div>
+            </div>
+            <div class="info text-left col-lg-6 col-md-7 col-sm-7">
+              <h3>Rafifa Nodi</h3>
+              <span class="position">UI/UX Designer</span>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.single-speakers -->
+
+          <!-- .single-speakers -->
+          <div class="single-speakers row">
+            <div class="img-holder text-center col-lg-6 col-md-5 col-sm-5">
+              <div class="img-container"><img src="/img/4.png" alt=""></div>
+            </div>
+            <div class="info text-left col-lg-6 col-md-7 col-sm-7">
+              <h3>Rashed Kabir</h3>
+              <span class="position">UI/UX Designer</span>
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <ul class="social">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- /.single-speakers -->
+        </div>
+      </div>
+      <div class="row text-center">
+        <a href="#" class="show-more hvr-bounce-to-right">SEE MORE</a>
+      </div>
+    </div>
+  </section>
+  <!-- /#event-speakers -->
+
+  <!-- #testimonials -->
+  <section id="testimonials" class="gradient-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h1>satisfied client</h1>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="testimonial custom-pager text-center">
+            <ul>
+              <li class="prev"><img src="/img/arrow-left.png" alt=""></li>
+              <li class="next"><img src="/img/arrow-right.png" alt=""></li>
+              <li class="active" data-slide-index="0"><span><img src="img/testimonials/1.png" alt=""></span></li>
+              <li data-slide-index="1"><span><img src="/img/2.png" alt=""></span></li>
+              <li data-slide-index="2"><span><img src="/img/3.png" alt=""></span></li>
+              <li data-slide-index="3"><span><img src="/img/4.png" alt=""></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <ul class="testimonial-slide">
+            <li class="slide">
+              <h3>Rafifa Nodi</h3>
+              <span>Designer, EventTime CO.</span>
+              
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been <br> the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <br> type and scrambled it to make a type specimen book</p>
+
+            </li>
+            <li class="slide">
+              <h3>Masum Rana</h3>
+              <span>Designer, EventTime CO.</span>
+              
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been <br> the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <br> type and scrambled it to make a type specimen book</p>
+
+            </li>
+            <li class="slide">
+              <h3>Rashed Kabir</h3>
+              <span>Designer, EventTime CO.</span>
+              
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been <br> the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <br> type and scrambled it to make a type specimen book</p>
+
+            </li>
+            <li class="slide">
+              <h3>Muhibbur Rashid</h3>
+              <span>CEO, EventTime CO.</span>
+              
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been <br> the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of <br> type and scrambled it to make a type specimen book</p>
+
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- /#testimonials -->
+
+  <!-- #gallery -->
+  <section id="gallery">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h1>Our Gallery</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has <br> been the industry's standard dummy text ever since the 1500</p>
+          </div>
+        </div>
+      </div>
+      <div class="row gallery-image">
+        <a class="fancybox" href="/img/1.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="/img/1.png" alt="">
+        </div></a>
+        <a class="fancybox" href="/img/2.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/2.png" alt="">
+        </div></a>
+        <a class="fancybox" href="img/gallery/3.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/3.png" alt="">
+        </div></a>
+        <a class="fancybox" href="img/gallery/4.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/4.png" alt="">
+        </div></a>
+        <a class="fancybox" href="img/gallery/5.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/5.png" alt="">
+        </div></a>
+        <a class="fancybox" href="img/gallery/6.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/6.png" alt="">
+        </div></a>
+        <a class="fancybox" href="img/gallery/7.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/7.png" alt="">
+        </div></a>
+        <a class="fancybox" href="img/gallery/8.png"><div class="col-lg-3 col-md-4 col-sm-6">
+          <img src="img/gallery/8.png" alt="">
+        </div></a>
+      </div>
+    </div>
+  </section>
+  <!-- /#gallery -->
+
+  <!-- #blog -->
+  <section id="blog">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h1>LATEST NEWS</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has <br> been the industry's standard dummy text ever since the 1500</p>
+          </div>
+        </div>
+      </div>
+      <div class="row blog-post-container">
+        <div class="col-lg-8 col-md-8 col-sm-12">
+          <div class="row">
+            <div class="single-post thumbnail col-lg-12 col-md-12 col-sm-12 wow fadeIn">
+              <div class="img-holder pull-left">
+                <img src="img/blog/1.jpg" alt="">
+              </div>
+              <div class="content pull-left">
+                <h3>Post with Image Here</h3>
+                <p class="meta"><a href="#">Rashed kabir</a> on 24  Feb, 2014</p>
+                <p>Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.</p>
+                <a href="#" class="read-more hvr-bounce-to-right">read more</a>
+              </div>
+            </div>
+            <div class="single-post col-lg-6 col-md-6 col-sm-6 wow fadeIn" data-wow-delay=".3s">
+              <div class="content">
+                <h3>Text Post Only Here</h3>
+                <p class="meta"><a href="#">Rashed kabir</a> on 24  Feb, 2014</p>
+                <p>Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.</p>
+                <a href="#" class="read-more hvr-bounce-to-right">read more</a>
+              </div>
+            </div>
+            <div class="single-post col-lg-6 col-md-6 col-sm-6 link-post  wow fadeIn" data-wow-delay=".3s">
+              <div class="link-holder text-center">
+                <i class="fa fa-link"></i>
+                <p>http://www.facebook.com</p>
+              </div>
+              <div class="content ">
+                <a href="#" class="read-more hvr-bounce-to-right">read more</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-lg-push-0 col-md-push-0 col-sm-push-3">
+          <div class="single-post wow fadeIn">
+            <div class="img-holder">
+              <img src="img/blog/2.jpg" alt="">
+            </div>
+            <div class="content">
+              <h3>Post with Image Here</h3>
+              <p class="meta"><a href="#">Rashed kabir</a> on 24  Feb, 2014</p>
+              <p>Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry.</p>
+              <a href="#" class="read-more hvr-bounce-to-right">read more</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#blog -->
+  
+
+  <!-- #contact -->
+  <section id="contact" class="gradient-overlay">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="section-title text-center">
+            <h1>Contact us</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has <br> been the industry's standard dummy text ever since the 1500</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12 form-section">
+          <form class="contact-form" action="include/sendemail.php">
+            <ul class="clearfix">
+              <li class="half"><input type="text" name="name" placeholder="Your Name"></li>
+              <li class="half"><input type="text" name="email" placeholder="Your Email"></li>
+              <li class="full"><input type="text" name="subject" placeholder="Your Subject"></li>
+              <li class="full"><textarea name="message" placeholder="Your Message here"></textarea></li>
+              <li class="full"><button type="submit" class="hvr-bounce-to-right">Contact Us</button></li>
+            </ul>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#contact -->
+
+  <!-- #subscribe-newsletter -->
+  <section id="subscribe-newsletter">
+    <div class="container">
+      <div class="gradient-overlay">
+        <div class="row">
+          <div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+            <div class="text-box col-lg-6 col-md-6 col-sm-6">
+              <span>Subcribe </span>Our News
+            </div>
+            <div class="input-box col-lg-6 col-md-6 col-sm-6">
+              <form action="#">
+                <input type="text" placeholder="Enter Email">
+                <button type="submit"><i class="fa fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#subscribe-newsletter -->
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <!-- .footer-widget -->
+        <div class="col-lg-4 col-md-4 col-sm-6 footer-widget about-widget" >
+          <img src="/img/logo.png" alt="Footer Logo">
+          <p>Lorem Ipsum is simply dummy text of the <br> printing and typesetting industry. Lorem <br> <br> Ipsum has been the industry's standard <br> dummy text ever since th1500s, when an <br> unknown printer took a galley book.</p>
+          <div class="social-icons">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google-plus"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-pinterest"></i></a>
+          </div>
+        </div>
+        <!-- /.footer-widget -->
+
+        <!-- .footer-widget -->
+        <div class="col-lg-2 col-md-2 col-sm-6 footer-widget menu-widget">
+          <h3>QUICK LINKS</h3>
+          <ul>
+            <li><a href="#"><i class="fa fa-angle-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Support</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Sitemap</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Blog</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Community</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Membership</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Event</a></li>
+            <li><a href="#"><i class="fa fa-angle-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- /.footer-widget -->
+
+        <!-- .footer-widget -->
+        
+      </div>
+    </div>
+  </footer>
+  <!-- /footer -->
+  
+  <!-- #bottom-bar -->
+  <section id="bottom-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p>&copy; 2018 <a href="index.html">EVENT Time</a> ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /#bottom-bar -->
+
+  
+  
+  <script async="" src="./Website_files/analytics.js.download"></script>
+  <script async="" src="./Website_files/default" charset="UTF-8" crossorigin="*"> </script>
+  <script src="./Website_files/jquery.min.js.download"></script>
+  <script src="./Website_files/jquery.themepunch.tools.min.js.download"></script>
+  <script src="./Website_files/jquery.themepunch.revolution.min.js.download"></script>
+  <script src="./Website_files/countdown.min.js.download"></script>
+  <script src="./Website_files/jquery.easing.min.js.download"></script>
+  <script src="./Website_files/jquery.fancybox.pack.js.download"></script>
+  <script src="./Website_files/jquery.mixitup.min.js.download"></script>
+  <script src="./Website_files/jquery.bxslider.min.js.download"></script>
+  <script src="./Website_files/owl.carousel.min.js.download"></script>
+  <script src="./Website_files/jquery.appear.js.download"></script>
+  <script src="./Website_files/jquery.countTo.js.download"></script>
+  <script src="./Website_files/circle-progress.js.download"></script>
+  <script src="./Website_files/wow.js.download"></script>
+  <script src="./Website_files/validate.js.download"></script>
+  <script src="./Website_files/custom.js.download"></script>
+  <ng-view> 
+  </ng-view>
+
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="controllers.js"></script>
+</body>
+</html>
