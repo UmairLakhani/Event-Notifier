@@ -6,4 +6,4 @@ user can:
 create event
 organize event
 view all event
-view all nearest event
+view all nearest events
